@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {FormBuilder} from '@angular/forms';
+import {FormBuilder, FormGroup} from '@angular/forms';
 import {IOptions} from './interfaces/options';
 import {store} from './store';
 import 'reflect-metadata';
@@ -22,7 +22,11 @@ export class JasperoBuilder {
         private _fb: FormBuilder
     ) {}
 
-    createForm() {
+    createForm(className: string): FormGroup {
 
+        // TODO: Throw error if className invalid
+        let final = Object.assign({}, store[className]);
+
+        return this._fb.group(final)
     }
 }
