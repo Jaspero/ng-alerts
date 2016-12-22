@@ -6,25 +6,32 @@ cache:
     - $HOME/.yarn-cache
     - node_modules
 
+sudo: false
+
 node_js:
-  - '7'
   - '6'
+  - '7'
+
+branches:
+  except:
+    - "/^v\\d+\\.\\d+\\.\\d+$/"
+
 before_install:
   - export CHROME_BIN=chromium-browser
   - npm i -g yarn
 
-install:
-  - yarn
-
 before_script:
   - npm prune
+
+install:
+  - yarn
 
 after_success:
   - npm run semantic-release
 
-branches:
-  except:
-    - /^v\d+\.\d+\.\d+$/
+before_script:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
 
 script:
   - npm run test
