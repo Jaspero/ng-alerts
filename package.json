@@ -8,7 +8,7 @@
     "test-watch": "karma start --singleRun=false --autoWatch=true",
     "commit": "npm run prepublish && npm test && git-cz",
     "prepublish": "ngc && npm run build",
-    "build": "webpack && cp bundles/ng2-translate.umd.js bundles/index.js",
+    "build": "webpack && cp bundles/ng2-form-builder.umd.js bundles/index.js",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
