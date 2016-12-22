@@ -1,0 +1,13 @@
+docs
+.idea
+.npmignore
+example
+node_modules
+.gitignore
+gulpfile.js
+tsconfig.json
+tslint.json
+.trevis.yml
+coverage
+tests
+karma.conf.js
