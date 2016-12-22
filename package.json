@@ -1,6 +1,6 @@
 {
   "name": "@jaspero/ng2-form-builder",
-  "version": "0.0.1",
+  "version": "0.0.0-development",
   "description": "A decorator implementation for Angular 2 Reactive Forms",
   "scripts": {
     "lint": "tslint ./src/**.ts -t verbose",
@@ -65,7 +65,7 @@
     "loader-utils": "0.2.16",
     "reflect-metadata": "0.1.8",
     "rxjs": "^5.0.1",
-    "semantic-release": "6.3.2",
+    "semantic-release": "^6.3.2",
     "source-map-loader": "0.1.5",
     "ts-helpers": "1.1.2",
     "tslint": "4.0.2",
