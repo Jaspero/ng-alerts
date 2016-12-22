@@ -27,5 +27,4 @@ branches:
     - /^v\d+\.\d+\.\d+$/
 
 script:
-  - npm run lint
   - npm run test
