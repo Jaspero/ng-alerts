@@ -16,7 +16,7 @@ export class AppComponent {
     testForm: any;
 
     ngOnInit() {
-        this.testForm = this._jb.createForm('Test');
+        this.testForm = this._jb.createForm(Test);
         console.log(this.testForm);
         console.log('blap: ', this.testForm.getRawValue());
     }
