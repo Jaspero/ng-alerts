@@ -1,5 +1,4 @@
 import {Component, ChangeDetectionStrategy} from '@angular/core';
-import {JasperoBuilder} from './test/src/jaspero-builder.service';
 import {Test, TestNeste} from './test/test';
 import 'reflect-metadata';
 

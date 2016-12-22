@@ -1,5 +1,3 @@
-import {JasperoBuilder} from './src/jaspero-builder.service';
-
 export class TestNeste {
     @JasperoBuilder.dec({initial: true})
     male: boolean

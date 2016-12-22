@@ -1,5 +1,6 @@
 {
   "name": "@jaspero/ng2-form-builder",
+  "version": "0.0.1",
   "description": "A decorator implementation for Angular 2 Reactive Forms",
   "scripts": {
     "test": "karma start",

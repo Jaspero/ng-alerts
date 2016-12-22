@@ -12,6 +12,4 @@ import {JasperoBuilder} from './src/jaspero-builder.service';
         JasperoBuilder
     ]
 })
-export class FormBuilderModule {
-
-}
+export class FormBuilderModule {}
