@@ -1,6 +1,6 @@
 import {Component, ChangeDetectionStrategy} from '@angular/core';
 import {JasperoBuilder} from './test/src/jaspero-builder.service';
-import {Test} from './test/test';
+import {Test, TestNeste} from './test/test';
 import 'reflect-metadata';
 
 @Component({
@@ -16,7 +16,7 @@ export class AppComponent {
     testForm: any;
 
     ngOnInit() {
-        this.testForm = this._jb.createForm(Test);
+        this.testForm = this._jb.createForm(new Test());
         console.log(this.testForm);
         console.log('blap: ', this.testForm.getRawValue());
     }

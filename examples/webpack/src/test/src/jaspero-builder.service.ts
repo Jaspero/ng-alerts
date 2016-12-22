@@ -6,6 +6,9 @@ import 'reflect-metadata';
 
 @Injectable()
 export class JasperoBuilder {
+
+    static baseTypes = ['String', 'Number', 'Boolean'];
+
     static dec(obj?: IOptions) {
         return function (target: any, key: string) {
             const t = Reflect.getMetadata('design:type', target, key),
@@ -13,7 +16,7 @@ export class JasperoBuilder {
 
             let toSet = obj;
 
-            if (typeof t.name === 'string' && this._baseTypes.indexOf(t.name) === -1)  toSet = t.name;
+            if (typeof t.name === 'string' && JasperoBuilder.baseTypes.indexOf(t.name) === -1)  toSet = t.name;
 
             if (store[cn]) store[cn][key] = toSet;
             else store[cn] = {[key]: toSet};
@@ -24,15 +27,13 @@ export class JasperoBuilder {
         private _fb: FormBuilder
     ) {}
 
-    createForm(cls: Object): FormGroup {
-
-        let className = cls.constructor.name;
-
-        // TODO: Throw error if className invalid
-        let final = Object.assign({}, store[className]);
-
-        return this._fb.group(final)
+    buildFb(obj: Object): Object {
+        let final = {};
+        for (let key in obj) final[key] = typeof obj[key] === 'string' ? this._fb.group(this.buildFb(store[obj[key]])) : obj[key];
+        return final;
     }
 
-    private _baseTypes = ['String', 'Number', 'Boolean'];
+    createForm(cls: Object): FormGroup {
+        return this._fb.group(this.buildFb(store[cls.constructor.name]))
+    }
 }
