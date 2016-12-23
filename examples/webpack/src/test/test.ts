@@ -1,4 +1,4 @@
-import {JasperoBuilder} from '@jaspero/ng2-form-builder';
+import {JasperoBuilder} from '@jaspero/ng2-form-builder/ng2-form-builder';
 
 export class TestNeste {
     @JasperoBuilder.dec({initial: true})
