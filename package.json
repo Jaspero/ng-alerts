@@ -3,12 +3,12 @@
   "version": "0.0.1",
   "description": "A decorator implementation for Angular 2 Reactive Forms",
   "scripts": {
-    "lint": "tslint ./src/**.ts -t verbose",
+    "lint": "tslint ./src/**/**.ts -e ./src/**/**.d.ts -t verbose",
     "test": "karma start",
     "clean": "rm *.metadata.json index.d.ts index.js ng2-form-builder.d.ts ng2-form-builder.js src/*.json src/*.js src/*.d.ts && rm -rf bundles",
     "test-watch": "karma start --singleRun=false --autoWatch=true",
     "prepublish": "ngc && npm run build",
-    "postpublish": "clean",
+    "postpublish": "npm run clean",
     "build": "webpack && cp bundles/ng2-form-builder.umd.js bundles/index.js"
   },
   "repository": {
