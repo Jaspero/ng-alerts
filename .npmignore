@@ -11,3 +11,5 @@ tslint.json
 coverage
 tests
 karma.conf.js
+npm-debug.log
+yarn.lock

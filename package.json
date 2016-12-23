@@ -1,15 +1,15 @@
 {
   "name": "@jaspero/ng2-form-builder",
-  "version": "0.0.0-development",
+  "version": "0.0.1",
   "description": "A decorator implementation for Angular 2 Reactive Forms",
   "scripts": {
     "lint": "tslint ./src/**.ts -t verbose",
     "test": "karma start",
+    "clean": "rm *.metadata.json index.d.ts index.js ng2-form-builder.d.ts ng2-form-builder.js src/*.json src/*.js src/*.d.ts && rm -rf bundles",
     "test-watch": "karma start --singleRun=false --autoWatch=true",
-    "commit": "npm run prepublish && npm test && git-cz",
     "prepublish": "ngc && npm run build",
-    "build": "webpack && cp bundles/ng2-form-builder.umd.js bundles/index.js",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "postpublish": "clean",
+    "build": "webpack && cp bundles/ng2-form-builder.umd.js bundles/index.js"
   },
   "repository": {
     "type": "git",
@@ -64,7 +64,6 @@
     "loader-utils": "0.2.16",
     "reflect-metadata": "0.1.8",
     "rxjs": "^5.0.1",
-    "semantic-release": "^6.3.2",
     "source-map-loader": "0.1.5",
     "ts-helpers": "1.1.2",
     "tslint": "4.0.2",
