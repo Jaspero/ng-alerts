@@ -27,13 +27,19 @@ export class JasperoBuilder {
         private _fb: FormBuilder
     ) {}
 
-    buildFb(obj: Object): Object {
+    buildFb(objFromStore: Object, originalObj: Object): Object {
         let final: any = {};
-        for (let key in obj) final[key] = typeof obj[key] === 'string' ? this._fb.group(this.buildFb(store[obj[key]])) : obj[key];
+        for (let key in objFromStore) final[key] = typeof objFromStore[key] === 'string' ? this._fb.group(this.buildFb(store[objFromStore[key]], originalObj[key])) : this._setValue(objFromStore[key], originalObj[key]);
         return final;
     }
 
     createForm(cls: Object): FormGroup {
-        return this._fb.group(this.buildFb(store[cls.constructor.name]))
+        return this._fb.group(this.buildFb(store[cls.constructor.name], cls))
+    }
+
+    private _setValue(fromStore: IOptions, originalObject: Object): any {
+        let toReturn = fromStore.initial;
+        if (originalObject) toReturn = Array.isArray(fromStore.initial) ?  [originalObject, ...fromStore.initial.slice(1)] : originalObject;
+        return toReturn;
     }
 }
