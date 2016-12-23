@@ -1,11 +1,11 @@
 {
   "name": "@jaspero/ng2-form-builder",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A decorator implementation for Angular 2 Reactive Forms",
   "scripts": {
     "lint": "tslint ./src/**/**.ts -e ./src/**/**.d.ts -t verbose",
     "test": "karma start",
-    "clean": "rm *.metadata.json index.d.ts index.js ng2-form-builder.d.ts ng2-form-builder.js src/*.json src/*.js src/*.d.ts && rm -rf bundles",
+    "clean": "rm *.metadata.json index.d.ts index.js ng2-form-builder.d.ts ng2-form-builder.js src/*.json src/*.js src/*.d.ts && rm -rf bundles && rm -rf coverage",
     "test-watch": "karma start --singleRun=false --autoWatch=true",
     "prepublish": "npm run test && ngc && npm run build",
     "postpublish": "npm run clean",
