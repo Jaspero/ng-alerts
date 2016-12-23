@@ -1,5 +1,6 @@
 import {Component, ChangeDetectionStrategy} from '@angular/core';
 import {Test, TestNeste} from './test/test';
+import {JasperoBuilder} from '@jaspero/ng2-form-builder';
 import 'reflect-metadata';
 
 @Component({

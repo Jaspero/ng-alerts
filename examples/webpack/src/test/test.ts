@@ -1,3 +1,5 @@
+import {JasperoBuilder} from '@jaspero/ng2-form-builder';
+
 export class TestNeste {
     @JasperoBuilder.dec({initial: true})
     male: boolean
