@@ -7,7 +7,7 @@
     "test": "karma start",
     "clean": "rm *.metadata.json index.d.ts index.js ng2-form-builder.d.ts ng2-form-builder.js src/*.json src/*.js src/*.d.ts && rm -rf bundles",
     "test-watch": "karma start --singleRun=false --autoWatch=true",
-    "prepublish": "ngc && npm run build",
+    "prepublish": "npm run test && ngc && npm run build",
     "postpublish": "npm run clean",
     "build": "webpack && cp bundles/ng2-form-builder.umd.js bundles/index.js"
   },
