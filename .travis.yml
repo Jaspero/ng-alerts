@@ -1,19 +1,35 @@
-dist: trusty
-sudo: required
 language: node_js
+
+cache:
+  directories:
+    - $HOME/.npm
+    - $HOME/.yarn-cache
+    - node_modules
+
+sudo: false
+
 node_js:
-  - "6"
-os:
-  - linux
-env:
-  global:
-    - DBUS_SESSION_BUS_ADDRESS=/dev/null
-    - DISPLAY=:99.0
-    - CHROME_BIN=chromium-browser
+  - '6'
+  - '7'
+
+branches:
+  except:
+    - "/^v\\d+\\.\\d+\\.\\d+$/"
+
+before_install:
+  - export CHROME_BIN=chromium-browser
+  - npm i -g yarn
+
 before_script:
-  - sh -e /etc/init.d/xvfb start
+  - npm prune
+
 install:
-  - npm install
+  - yarn
+
+before_script:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+
 script:
   - npm run lint
   - npm run test
