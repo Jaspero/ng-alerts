@@ -1,7 +1,7 @@
 {
-  "name": "@jaspero/ng2-form-builder",
-  "version": "0.0.4",
-  "description": "A decorator implementation for Angular 2 Reactive Forms",
+  "name": "@jaspero/ng2-alerts",
+  "version": "0.0.1",
+  "description": "An easy to use alert library for Angular 2",
   "scripts": {
     "lint": "tslint ./src/**/**.ts -e ./src/**/**.d.ts -t verbose",
     "test": "karma start",
@@ -13,28 +13,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Jaspero/ng2-form-builder.git"
+    "url": "https://github.com/Jaspero/ng2-alerts.git"
   },
   "keywords": [
     "angular",
     "angular2",
-    "forms",
-    "reactive forms",
-    "module driven forms"
+    "alerts"
   ],
   "author": "Jaspero co.",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Jaspero/ng2-form-builder/issues"
+    "url": "https://github.com/Jaspero/ng2-alerts/issues"
   },
-  "main": "bundles/ng2-form-builder.umd.js",
+  "main": "bundles/ng2-alerts.umd.js",
   "module": "index.js",
   "typings": "index.d.ts",
-  "homepage": "https://github.com/Jaspero/ng2-form-builder",
+  "homepage": "https://github.com/Jaspero/ng2-alerts",
   "peerDependencies": {
-    "@angular/core": "^2.0.0",
-    "@angular/forms": "2.3.1",
-    "reflect-metadata": "0.1.8"
+    "@angular/core": "^2.0.0"
   },
   "devDependencies": {
     "@angular/common": "2.3.1",

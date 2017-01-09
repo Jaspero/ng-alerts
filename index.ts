@@ -1,18 +1,16 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {ReactiveFormsModule} from '@angular/forms';
-import {JasperoBuilder} from './src/jaspero-builder.service';
-
-export * from './src/jaspero-builder.service';
-export * from './src/interfaces/options';
+import {AlertsComponent} from './src/alerts.component';
+import {AlertsService} from './src/alerts.service';
+import {AlertComponent} from './src/alert.component';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        ReactiveFormsModule
+    imports: [CommonModule],
+    declarations: [
+        AlertsComponent,
+        AlertComponent
     ],
-    providers: [
-        JasperoBuilder
-    ]
+    providers: [AlertsService],
+    exports: [AlertsComponent]
 })
-export class FormBuilderModule {}
+export class JasperoAlertsModule {}

@@ -1,15 +1,15 @@
-[![Build Status](https://travis-ci.org/Jaspero/ng2-form-builder.svg?branch=master)](https://travis-ci.org/flauc/angular2-notifications)
-[![NPM Version](https://img.shields.io/npm/v/@jaspero/ng2-form-builder.svg)](https://www.npmjs.com/package/@jaspero/ng2-form-builder)
-# NG2 Form-Builder
-This library provides a faster and cleaner way to use Angular 2 Reactive Forms through typescript decorators.
+[![Build Status](https://travis-ci.org/Jaspero/ng2-alerts.svg?branch=master)](https://travis-ci.org/jaspero/ng2-alerts)
+[![NPM Version](https://img.shields.io/npm/v/@jaspero/ng2-alerts.svg)](https://www.npmjs.com/package/@jaspero/ng2-alerts)
+# NG2 Alerts
+An easy to use alert library for Angular 2.
 
 ## Setup
-Import `FormBuilderModule` in your `@NgModule` and you're good to go: 
+Import `JasperoAlertsModule` in your `@NgModule`: 
 
 ```ts
 @NgModule({
     imports: [
-        FormBuilderModule
+        JasperoAlertsModule
     ],
     declarations: [AppComponent],
     bootstrap: [AppComponent]
@@ -17,33 +17,16 @@ Import `FormBuilderModule` in your `@NgModule` and you're good to go:
 export class AppModule {}
 ```
 
-## How to use
-To use this library simply create a class and add `@JasperoBuilder.dec()` decorators to each property:
-```ts
-export class User {
-    @JasperoBuilder.dec({initial: ''})
-    username: string;
-    @JasperoBuilder.dec({initial: ''})
-    password: string;
-}
-```
-The `dec()` method accepts the same arguments as `new FormControl()` does and creates the `FormControl` 
- in the background.
- 
-Then in your component create the `FormGroup` like this: 
- 
-```ts
-export class AppComponent {
-    constructor(private _jb: JasperoBuilder) {}
-    
-    userForm: any;
+Then create the component in a root component (you can create it anywhere but you can only use it in that component on any lower ones).
 
-    ngOnInit() {
-        // You can also instantiate the class with values
-        this.useForm = this._jb.createForm(new User());
-    }
-}
+```html
+<jaspero-alerts [defaultSettings]="options"></jaspero-alerts>
 ```
+
+## How To Use 
+You need to import `JasperoAlertsService` in your component. 
+
+## Options
 
 
  

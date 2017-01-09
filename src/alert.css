@@ -1,0 +1,81 @@
+:host {
+    display: block;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background: rgba(0,0,0,0.5);
+}
+
+.wrapper {
+    width: 400px;
+    border-radius: 0.5rem;
+    position: fixed;
+    top: 20%;
+    text-align: center;
+    left: calc(50% - 200px);
+    box-shadow: 0 5px 40px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+    transform-origin: bottom center;
+    background: white;
+}
+
+.close {
+    position: absolute;
+    top: -21px;
+    right: -21px;
+    width: 30px;
+    box-shadow: 0 5px 40px rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.close:hover {
+    transform: scale(1.2, 1.2);
+}
+
+.symbol svg {
+    width: 100px;
+    padding: 3rem 0rem;
+}
+
+.message {
+    padding: 1rem;
+    font-weight: 600;
+    opacity: 0.6;
+    transition: all 450ms ease-in-out 100ms;
+    cursor: default;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+.short {
+    font-size: 30px;
+    font-weight: 800;
+    padding: 0.1rem;
+    color: white;
+    letter-spacing: 1px;
+    border-bottom-left-radius: 0.35rem;
+    border-bottom-right-radius: 0.35rem;
+    cursor: pointer;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+.short:first-letter {
+    text-transform: uppercase;
+}
+
+:host(.success) .short {background: #6AC259}
+:host(.success) .short:hover {background: #5faf50}
+:host(.error) .short {background: #F05228}
+:host(.error) .short:hover {background: #d84a24}
+:host(.warning) .short {background: #E2574C}
+:host(.warning) .short:hover {background: #cb4e44}
+:host(.info) .short {background: #25B7D3}
+:host(.info) .short:hover {background: #21a5be}

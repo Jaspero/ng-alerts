@@ -20,14 +20,14 @@ module.exports = {
         extensions: ['.ts', '.js']
     },
 
-    entry: helpers.root('ng2-form-builder.ts'),
+    entry: helpers.root('ng2-alerts.ts'),
 
     output: {
         path: helpers.root('bundles'),
         publicPath: '/',
-        filename: 'ng2-form-builder.umd.js',
+        filename: 'ng2-alerts.umd.js',
         libraryTarget: 'umd',
-        library: 'ng2-form-builder'
+        library: 'ng2-alerts'
     },
 
     // require those dependencies but don't bundle them
