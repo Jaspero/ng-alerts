@@ -1,6 +1,6 @@
 {
   "name": "@jaspero/ng2-alerts",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "An easy to use alert library for Angular 2",
   "scripts": {
     "lint": "tslint ./src/**/**.ts -e ./src/**/**.d.ts -t verbose",
