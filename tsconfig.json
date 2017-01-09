@@ -15,7 +15,7 @@
   },
   "files": [
     "index.ts",
-    "ng2-form-builder.ts"
+    "ng2-alerts.ts"
   ],
   "exclude": [
     "node_modules",
