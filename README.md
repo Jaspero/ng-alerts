@@ -27,16 +27,15 @@ Then create the component in a root component (you can create it anywhere but yo
 You need to import the `AlertsService` in your component:
  
 ```typescript
-    constructor(private _alert: AlertsService) {}
+constructor(private _alert: AlertsService) {}
 ```
 
 Then use the `create(type: 'success' | 'error' | 'wearning', 'info', message: string, settings: AlertSettings)` method to initiate an alert.
 
 ```typescript
-    message: string = 'This is so cool';
-    open(type: AlertType) {
-        this._alert.create(type, this.message);
-    }
+open(type: AlertType) {
+    this._alert.create(type, 'This is a message');
+}
 ```
 
 ## Options
