@@ -23,6 +23,8 @@
     "server:prod": "http-server dist -c-1 --cors",
     "server:prod:ci": "http-server dist -p 3000 -c-1 --cors",
     "server": "npm run server:dev",
+    "github-deploy:dev": "webpack --config config/webpack.github-deploy.js --progress --profile --env.githubDev",
+    "github-deploy:prod": "webpack --config config/webpack.github-deploy.js --progress --profile --env.githubProd",
     "start:hmr": "npm run server:dev:hmr",
     "start": "npm run server:dev",
     "version": "npm run build",
