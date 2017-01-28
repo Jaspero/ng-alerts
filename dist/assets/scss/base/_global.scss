@@ -1,0 +1,190 @@
+/*============================
+=          Global            =
+============================*/
+
+* {
+    box-sizing: border-box !important;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+
+/* Default body styles*/
+
+body {
+    min-height: 100%;
+    color: $color-text;
+    font-family: $primary-font;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    /* For animations*/
+    width: 100%;
+    overflow-x: hidden;
+}
+
+::selection {
+    background: $secondary-color;
+    color: #FFFFFF;
+}
+
+::-moz-selection {
+    background: $secondary-color;
+    color: #FFFFFF;
+}
+
+img,
+iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+iframe {
+    width: 100%;
+    min-height: 500px;
+    margin-bottom: 2rem;
+}
+
+.main {
+    padding: 4rem 0;
+    background: #eee;
+}
+
+
+/* Set box-sizing globally to handle padding and border widths*/
+
+*,
+*:after,
+*:before {
+    box-sizing: inherit;
+}
+
+$large-screen: new-breakpoint(max-width 1200px 12);
+$medium-screen: new-breakpoint(max-width 992px 12);
+$small-screen: new-breakpoint(max-width 768px 6);
+@mixin container {
+    @include outer-container;
+    @include media($large-screen) {
+        max-width: 1070px;
+    }
+    @include media($medium-screen) {
+        max-width: 970px;
+    }
+    @include media($small-screen) {
+        max-width: 750px;
+    }
+}
+
+.container {
+    @include container;
+    @include row();
+    padding: 0 15px;
+    @include media(max-width 750px) {
+        padding: 0 2rem !important;
+    }
+}
+
+.row {
+    @include row();
+}
+
+.section__title {
+    font-size: 7rem;
+    text-align: center;
+    position: relative;
+    margin-bottom: 1rem;
+    display: inline-block;
+    @include media(max-width 750px) {
+        font-size: 5rem;
+    }
+}
+
+.section__subtitle {
+    margin: 0 auto 5rem auto;
+    text-align: center;
+    max-width: 640px;
+    position: relative;
+    line-height: 1.4;
+    display: inline-block;
+    @include media(max-width 750px) {
+        font-size: 1.6rem;
+    }
+    &.black {
+        background: $primary-color;
+        color: lighten($primary-color, 30%);
+    }
+    &.gray {
+        background: #F2F2F2;
+    }
+}
+
+.middled {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.text-center {
+    text-align: center
+}
+
+.text-wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 640px;
+    margin: 0 auto 5rem auto;
+}
+
+.white {
+    background: white !important;
+}
+
+.mask {
+    position: relative;
+    &:after {
+        content: '';
+        @include position(absolute, 0 null null 0);
+        z-index: 50;
+        @include size(100%);
+        display: block;
+        @include transform-origin(right 50%);
+        @include transition(all 1s cubic-bezier(0.42, 0, 0, 0.995))
+    }
+    &.mask-blue {
+        &:after {
+            background: #12223E;
+        }
+    }
+    &.mask-white {
+        &:after {
+            background: white;
+        }
+    }
+    &.mask-revealed:after {
+        @include transform(scaleX(0))
+    }
+}
+
+.gray {
+    background: #EEF2F7;
+}
+
+.no-shadow {
+    box-shadow: none !important
+}
+
+.projects .project sc-morph-overlay {
+    display: none;
+}
+
+.browser-loaded .projects .project sc-morph-overlay {
+    display: initial;
+}

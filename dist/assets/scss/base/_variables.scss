@@ -1,0 +1,17 @@
+/*=================================
+=            Variables            =
+=================================*/
+
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
+$primary-font: 'F37 Ginger',
+sans-serif !default;
+$heading-font: 'Abril Fatface',
+sans-serif !default;
+
+/*----------  colors  ----------*/
+
+$primary-color: #703478 !default;
+$secondary-color: #DF7E77 !default;
+$link-color: lighten($primary-color,
+25%) !default;
+$color-text: #8D96A5 !default;

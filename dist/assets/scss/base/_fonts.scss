@@ -1,0 +1,16 @@
+@include font-face("Coolvetica", "../assets/fonts/coolvetica");
+@font-face {
+    font-family: 'F37 Ginger';
+    src: url('../assets/fonts/F37Ginger-Bold.eot');
+    src: url('../assets/fonts/F37Ginger-Bold.eot?#iefix') format('embedded-opentype'), url('../assets/fonts/F37Ginger-Bold.woff2') format('woff2'), url('../assets/fonts/F37Ginger-Bold.woff') format('woff'), url('../assets/fonts/F37Ginger-Bold.ttf') format('truetype'), url('../assets/fonts/F37Ginger-Bold.svg#F37Ginger-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'F37 Ginger';
+    src: url('../assets/fonts/F37Ginger.eot');
+    src: url('../assets/fonts/F37Ginger.eot?#iefix') format('embedded-opentype'), url('../assets/fonts/F37Ginger.woff2') format('woff2'), url('../assets/fonts/F37Ginger.woff') format('woff'), url('../assets/fonts/F37Ginger.ttf') format('truetype'), url('../assets/fonts/F37Ginger.svg#F37Ginger') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

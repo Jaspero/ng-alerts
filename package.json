@@ -35,7 +35,8 @@
     "webdriver:start": "npm run webdriver-manager start",
     "webdriver:update": "webdriver-manager update",
     "webpack-dev-server": "webpack-dev-server",
-    "webpack": "webpack"
+    "webpack": "webpack",
+    "rimraf": "rimraf"
   },
   "dependencies": {
     "@angular/common": "~2.4.3",
