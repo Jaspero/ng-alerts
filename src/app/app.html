@@ -1,3 +1,99 @@
-<p>
-    Cool
-</p>
+<header class="content-header">
+    <div class="content-intro">
+        <h2>NG2 Alerts</h2>
+    </div>
+    <div class="blocks">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</header>
+<main>
+    <h2>Ng2 Alert Settings</h2>
+    <p>Change the options below to test out the library. Be sure to try all of the different types of alerts.</p>
+    <form>
+        <div class="field">
+            <label for="type">Type</label>
+            <select name="type" id="type" [(ngModel)]="type">
+                <option *ngFor="let t of types" [value]="t">{{t}}</option>
+            </select>
+        </div>
+        <div class="field">
+            <label for="message">Message</label>
+            <input type="text" id="message" name="message" [(ngModel)]="message">
+        </div>
+        <div class="field">
+            <label for="duration">Duration</label>
+            <input type="number" id="duration" name="duration" [(ngModel)]="duration">
+        </div>
+        <div class="field half">
+            <span>Show overlay?</span>
+            <label class="control control--radio"> Yes
+                <input type="radio" name="overlay" [checked]="overlay" (change)="overlay = $event.target.checked"/>
+                <div class="control__indicator"></div>
+            </label>
+            <label class="control control--radio"> No
+                <input type="radio" name="overlay" [checked]="!overlay" (change)="overlay = !$event.target.checked"/>
+                <div class="control__indicator"></div>
+            </label>
+        </div>
+        <div class="field half">
+            <span>Close on overlay click?</span>
+            <label class="control control--radio"> Yes
+                <input type="radio" name="overlayClickToClose" [checked]="overlayClickToClose" (change)="overlayClickToClose = $event.target.checked"/>
+                <div class="control__indicator"></div>
+            </label>
+            <label class="control control--radio"> No
+                <input type="radio" name="overlayClickToClose" [checked]="!overlayClickToClose" (change)="overlayClickToClose = !$event.target.checked"/>
+                <div class="control__indicator"></div>
+            </label>
+        </div>
+        <div class="field half">
+            <span>Show close button?</span>
+            <label class="control control--radio"> Yes
+                <input type="radio" name="showCloseButton" [checked]="showCloseButton" (change)="showCloseButton = $event.target.checked"/>
+                <div class="control__indicator"></div>
+            </label>
+            <label class="control control--radio"> No
+                <input type="radio" name="showCloseButton" [checked]="!showCloseButton" (change)="showCloseButton = !$event.target.checked"/>
+                <div class="control__indicator"></div>
+            </label>
+        </div>
+        <div class="field">
+            <button type="submit" class="btn" (click)="open()">Create Alert</button>
+        </div>
+    </form>
+    <jaspero-alerts></jaspero-alerts>
+</main>
+<footer class="footer">
+    <div class="footer-top">
+        <div class="footer-container">
+            <a class="big" href="http://jaspero.co">Hire us</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="brand">
+                The MIT License (MIT) Copyright (c) 2017 Jaspero Ltd.
+            </div>
+            <div class="social__links">
+                <ul>
+                    <li>
+                        <a href="https://www.facebook.com/jasperohr" target="_blank"><img src="../assets/img/facebook.svg" width="20px"></a>
+                    </li>
+                    <li>
+                        <a href="https://dribbble.com/jaspero" target="_blank"><img src="../assets/img/dribbble.svg" width="20px"></a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/jaspero_co" target="_blank"><img src="../assets/img/twitter.svg" width="20px"></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/jaspero.co" target="_blank"><img src="../assets/img/instagram.svg" width="20px"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>

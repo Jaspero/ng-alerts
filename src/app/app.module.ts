@@ -3,10 +3,10 @@ import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {NgModule, ApplicationRef} from '@angular/core';
 import {removeNgStyles, createNewHosts, createInputTransfer} from '@angularclass/hmr';
-import {RouterModule, PreloadAllModules} from '@angular/router';
 import {ENV_PROVIDERS} from './environment';
 import {AppComponent } from './app.component';
 import {AppState, InternalStateType } from './app.service';
+import {JasperoAlertsModule} from '@jaspero/ng2-alerts';
 
 const APP_PROVIDERS = [
     AppState
@@ -18,20 +18,18 @@ type StoreType = {
     disposeOldHosts: () => void
 };
 
-/**
- * `AppModule` is the main entry point into Angular2's bootstraping process
- */
 @NgModule({
     bootstrap: [ AppComponent ],
     declarations: [
         AppComponent
     ],
-    imports: [ // import Angular's modules
+    imports: [
         BrowserModule,
         FormsModule,
-        HttpModule
+        HttpModule,
+        JasperoAlertsModule
     ],
-    providers: [ // expose our Services and Providers into Angular's dependency injection
+    providers: [
         ENV_PROVIDERS,
         APP_PROVIDERS
     ]

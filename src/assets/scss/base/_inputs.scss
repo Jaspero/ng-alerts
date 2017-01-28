@@ -1,0 +1,128 @@
+#{$all-text-inputs} {
+    background: white;
+    border: none;
+    padding: 1.3rem 0;
+    display: inline-block;
+    width: 100%;
+    outline: none;
+    font-size: 1.5rem;
+    font-family: $primary-font;
+    font-weight: 300;
+    border-bottom:1px solid #ccc;
+}
+
+.field {
+    display: table;
+    width:100%;
+    margin-bottom: 3.5rem;
+
+    &.half {
+        @include span-columns(6);
+        @include omega(2n);
+        @include media(max-width 750px) {
+            @include span-columns(12);
+        }
+    }
+    &:last-child {
+        margin-bottom:0;
+        @include media(max-width 750px) {
+            margin-bottom: 3.5rem;
+        }
+    }
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.material-input {
+    position: relative;
+
+    #{$all-text-inputs} {
+        background-color: transparent;
+        border-color: #8D96A5;
+        border-style: none none solid;
+        border-width: 0 0 1px;
+        box-sizing: border-box;
+        font-size: 1.6rem;
+        width: 100%;
+
+        &:focus {
+            outline: 0;
+
+            ~ span {
+                @include transition(all .1s ease);
+                width: 100%;
+            }
+        }
+
+        &:focus ~ label,
+        &:valid ~ label {
+            @include transition(all .2s ease);
+            color: #8B8B8B;
+            font-size: 1.6rem;
+            top: -20px;
+        }
+
+        &:invalid {
+            box-shadow: none;
+        }
+
+        ~ span {
+            @include position(absolute, null null 0 0);
+            @include size(0 2px);
+            @include transition(all .2s ease);
+            background: $secondary-color;
+            display: block;
+        }
+    }
+
+    label {
+        @include position(absolute, 1rem null null 0);
+        @include transition(all .25s ease);
+        color: #8D96A5;
+        pointer-events: none;
+        font-size:1.6rem;
+    }
+}
+
+.material-select {
+    @include clearfix;
+    height:48px;
+    label {
+        float: left;
+        font-size:1.6rem;
+        line-height:48px;
+        margin:0;
+    }
+    sc-select {
+        float: right;
+        width:60%;
+        height:48px;
+        position: relative;
+        background: transparent url('../assets/img/down-arrow.svg') no-repeat center right / 20px;
+        border-bottom:1px solid #ccc;
+        cursor: pointer;
+        box-shadow: none;
+        @include media(max-width 750px) {
+            width:100%;
+        }
+        span {
+            font-size:1.6rem;
+            line-height:40px;
+        }
+        .selection {
+            z-index: 10;
+            border:none;
+            top:0;
+            .item {
+                @include transition(all .2s ease-in-out);
+                cursor: pointer;
+                &:hover, &.selected {
+                    background: #eee;
+                }
+            }
+        }
+    }
+}
