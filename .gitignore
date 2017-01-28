@@ -1,6 +1,2 @@
 .idea
 node_modules
-coverage
-yarn.lock
-npm-debug.log
-bundles
