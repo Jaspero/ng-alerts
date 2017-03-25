@@ -3,6 +3,13 @@
 # NG2 Alerts
 An easy to use alert library for Angular 2.
 
+```
+npm install --save @jaspero/ng2-alerts
+```
+
+A demo can be found [here](http://open-source.jaspero.co/ng/ng-alerts)
+
+
 ## Setup
 Import `JasperoAlertsModule` in your `@NgModule`: 
 
