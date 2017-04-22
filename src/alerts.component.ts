@@ -64,7 +64,7 @@ export class AlertsComponent implements OnInit, OnDestroy {
 
             this._current = component;
 
-            this._latestSub = component.instance.close.subscribe(res => {
+            this._latestSub = component.instance.close.subscribe((res: any) => {
                 this._service.alert$.next(res);
             });
         });

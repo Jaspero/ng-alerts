@@ -1,16 +1,19 @@
-docs
-.idea
-.npmignore
-examples
-node_modules
-.gitignore
-gulpfile.js
-tsconfig.json
-tslint.json
-.trevis.yml
-coverage
-tests
-karma.conf.js
+# Node
+node_modules/*
 npm-debug.log
-yarn.lock
-.travis.yml
+
+# DO NOT IGNORE TYPESCRIPT FILES FOR NPM
+# TypeScript
+# *.js
+# *.map
+# *.d.ts
+
+# JetBrains
+.idea
+.project
+.settings
+.idea/*
+*.iml
+
+example
+tests

@@ -1,6 +1,9 @@
-.idea
-node_modules
-coverage
-yarn.lock
+node_modules/*
 npm-debug.log
-bundles
+*.js
+*.map
+*.d.ts
+.idea
+**.ngfactory.ts
+example/node_modules
+!karma.conf.js

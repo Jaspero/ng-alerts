@@ -1,28 +1,30 @@
 {
   "compilerOptions": {
-    "noImplicitAny": false,
+    "noImplicitAny": true,
     "module": "es2015",
+    "moduleResolution": "node",
     "target": "es5",
+    "lib": ["es2015", "dom"],
+    "suppressImplicitAnyIndexErrors": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "allowUnusedLabels": false,
+    "noImplicitReturns": true,
+    "sourceMap": true,
     "declaration": true,
-    "moduleResolution": "node",
-    "noUnusedLocals": true,
+    "outDir": "./dist",
     "typeRoots": [
       "node_modules/@types"
-    ],
-    "lib": ["es2015", "dom"]
+    ]
   },
-  "files": [
-    "index.ts",
-    "ng2-alerts.ts"
-  ],
   "exclude": [
     "node_modules",
-    "bundles"
+    "dist",
+    "**/*.spec.ts",
+    "example",
+    "tests"
   ],
   "angularCompilerOptions": {
-    "strictMetadataEmit": true,
-    "skipTemplateCodegen": true
+    "strictMetadataEmit": true
   }
 }
