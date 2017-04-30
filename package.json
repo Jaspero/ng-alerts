@@ -1,6 +1,6 @@
 {
   "name": "@jaspero/ng2-alerts",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "An easy to use alert library for Angular 2",
   "scripts": {
     "build": "ngc -p tsconfig.json",
