@@ -13,7 +13,7 @@ export * from './src/interfaces/alert-settings';
 export * from './src/interfaces/alert-type';
 
 @NgModule({
-    imports: [CommonModule, BrowserAnimationsModule],
+    imports: [CommonModule],
     declarations: [
         AlertsComponent,
         AlertComponent
