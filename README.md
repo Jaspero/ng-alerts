@@ -7,7 +7,7 @@ An easy to use alert library for Angular 2.
 npm install --save @jaspero/ng2-alerts
 ```
 
-A demo can be found [here](http://open-source.jaspero.co/ng/ng-alerts)
+A demo can be found [here](https://jaspero.co/resources/projects/ng-alerts)
 
 
 ## Setup
