@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/Jaspero/ng-alerts.svg?branch=master)](https://travis-ci.org/jaspero/ng-alerts)
+[![Build Status](https://travis-ci.org/Jaspero/ng2-alerts.svg?branch=master)](https://travis-ci.org/jaspero/ng2-alerts)
 [![NPM Version](https://img.shields.io/npm/v/@jaspero/ng-alerts.svg)](https://www.npmjs.com/package/@jaspero/ng-alerts)
 # NG Alerts
 An easy to use alert library for Angular.
