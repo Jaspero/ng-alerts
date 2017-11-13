@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewContainerRef, OnDestroy, Input, ReflectiveInjector, ComponentFactoryResolver, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewContainerRef, OnDestroy, Input, ComponentFactoryResolver, ViewChild, Injector} from '@angular/core';
 import {AlertsService} from '../../services/alerts.service';
 import {AlertSettings} from '../../interfaces/alert-settings';
 import {AlertComponent} from '../alert/alert.component';
@@ -46,26 +46,23 @@ export class AlertsComponent implements OnInit, OnDestroy {
         return;
       }
 
-      let settingsFinalAsArray = [];
+      const settingsFinal = {};
 
       for (const key in this.settings) {
         if (this.settings.hasOwnProperty(key)) {
-          let toUse = alert.override[key] !== undefined ? alert.override[key] : this.settings[key];
-          settingsFinalAsArray.push({key: key, value: toUse});
+          settingsFinal[key] = alert.override[key] !== undefined ? alert.override[key] : this.settings[key];
         }
       }
 
-      let inputProviders = [
-          {key: 'message', value: alert.message},
-          {key: 'type', value: alert.type},
-          ...settingsFinalAsArray
-        ].map((input) => {
-          return {provide: input.key, useValue: input.value};
-        }),
-        resolvedInputs = ReflectiveInjector.resolve(inputProviders),
-        injector = ReflectiveInjector.fromResolvedProviders(resolvedInputs, this.compViewContainerRef.parentInjector),
-        factory = this._resolver.resolveComponentFactory(AlertComponent),
-        component = factory.create(injector);
+      const injector = Injector.create([], this.compViewContainerRef.parentInjector);
+      const factory = this._resolver.resolveComponentFactory(AlertComponent);
+      const component = factory.create(injector);
+
+      component.instance.type = alert.type || 'success';
+      component.instance.incomingData = {
+        message: alert.message,
+        ...settingsFinal
+      };
 
       this.compViewContainerRef.insert(component.hostView);
 

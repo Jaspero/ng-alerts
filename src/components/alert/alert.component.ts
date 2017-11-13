@@ -1,4 +1,4 @@
-import {Component, Injector, HostBinding, Output, EventEmitter, OnInit, NgZone} from '@angular/core';
+import {Component, HostBinding, Output, EventEmitter, OnInit, NgZone} from '@angular/core';
 import {animate, keyframes, state, style, transition, trigger} from '@angular/animations';
 import {AlertType} from '../../interfaces/alert-type';
 
@@ -49,15 +49,13 @@ import {AlertType} from '../../interfaces/alert-type';
 })
 export class AlertComponent implements OnInit {
   constructor(
-    private _injector: Injector,
     private _ngZone: NgZone
   ) {}
 
-  animationState = 'enter';
-
-  @Output() close: EventEmitter<any> = new EventEmitter();
+  @Output() close = new EventEmitter();
   @HostBinding('class') type: AlertType;
 
+  animationState = 'enter';
   incomingData: any = {
     message: '',
     overlay: true,
@@ -67,14 +65,6 @@ export class AlertComponent implements OnInit {
   };
 
   ngOnInit() {
-    this.type = this._injector.get('type');
-    for (const key in this.incomingData) {
-      if (this.animationState.hasOwnProperty(key)) {
-        this.incomingData[key] = this._injector.get(key);
-      }
-
-    }
-
     if (this.incomingData.duration) {
       this._ngZone.runOutsideAngular(() =>
         setTimeout(() =>

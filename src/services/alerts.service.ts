@@ -8,7 +8,7 @@ import {AlertType} from '../interfaces/alert-type';
 export class AlertsService {
     alert$: Subject<AlertEmit> = new Subject();
 
-    create(type: AlertType, message: string, override: AlertSettings = {}) {
-        this.alert$.next({type: type, message: message, override: override});
+    create(type: AlertType = 'success', message = '', override: AlertSettings = {}) {
+        this.alert$.next({type, message, override});
     }
 }
