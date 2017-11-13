@@ -1,22 +1,25 @@
-[![Build Status](https://travis-ci.org/Jaspero/ng2-alerts.svg?branch=master)](https://travis-ci.org/jaspero/ng2-alerts)
-[![NPM Version](https://img.shields.io/npm/v/@jaspero/ng2-alerts.svg)](https://www.npmjs.com/package/@jaspero/ng2-alerts)
-# NG2 Alerts
-An easy to use alert library for Angular 2.
-
-```
-npm install --save @jaspero/ng2-alerts
-```
+[![Build Status](https://travis-ci.org/Jaspero/ng-alerts.svg?branch=master)](https://travis-ci.org/jaspero/ng-alerts)
+[![NPM Version](https://img.shields.io/npm/v/@jaspero/ng-alerts.svg)](https://www.npmjs.com/package/@jaspero/ng-alerts)
+# NG Alerts
+An easy to use alert library for Angular.
 
 A demo can be found [here](https://jaspero.co/resources/projects/ng-alerts)
 
+## Installation
+
+To install this library, run:
+
+```bash
+$ npm install --save @jaspero/ng-alerts
+```
 
 ## Setup
-Import `JasperoAlertsModule` in your `@NgModule`: 
+Import `JasperoAlertsModule` in your `AppModule`: 
 
 ```ts
 @NgModule({
     imports: [
-        JasperoAlertsModule
+        JasperoAlertsModule.forRoot()
     ],
     declarations: [AppComponent],
     bootstrap: [AppComponent]
@@ -62,4 +65,20 @@ You can provide the settings as input to the `<jaspero-alerts></jaspero-alerts>`
 Making the settings default for each created alert. However you can also override the settings by
 passing them in the `create()` method.
 
- 
+## Development
+
+To generate all `*.js`, `*.d.ts` and `*.metadata.json` files:
+
+```bash
+$ npm run build
+```
+
+To lint all `*.ts` files:
+
+```bash
+$ npm run lint
+```
+
+## License
+
+MIT © [Jaspero co.](mailto:info@jaspero.co)

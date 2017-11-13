@@ -8,9 +8,9 @@
       true,
       "check-space"
     ],
-    "curly": false,
-    "eofline": false,
-    "forin": false,
+    "curly": true,
+    "eofline": true,
+    "forin": true,
     "indent": [
       true,
       "spaces"
@@ -56,7 +56,9 @@
       "single"
     ],
     "radix": true,
-    "semicolon": false,
+    "semicolon": [
+      "always"
+    ],
     "triple-equals": [
       true,
       "allow-null-check"
