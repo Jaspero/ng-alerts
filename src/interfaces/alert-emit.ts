@@ -3,7 +3,7 @@ import {AlertSettings} from './alert-settings';
 
 export interface AlertEmit {
     close?: boolean;
-    message?: string;
+    message?: any;
     type?: AlertType;
     override?: AlertSettings;
 }

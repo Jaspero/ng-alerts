@@ -31,7 +31,17 @@
             </svg>
         </ng-template>
     </div>
-    <div class="message" [@messageAn]="animationState">{{incomingData.message}}</div>
+
+
+    <div class="message" [@messageAn]="animationState">
+        <div *ngIf="incomingData.messageIsTemplate else regularTitle">
+            <ng-container *ngTemplateOutlet="incomingData.message"></ng-container>
+        </div>
+        <ng-template #regularTitle>
+            <div [innerHTML]="incomingData.message"></div>
+        </ng-template>
+    </div>
+
     <div class="short">
         <p [@shortAn]="animationState">{{type}}!</p>
     </div>

@@ -1,4 +1,8 @@
-import {Component, OnInit, ViewContainerRef, OnDestroy, Input, ComponentFactoryResolver, ViewChild, Injector} from '@angular/core';
+import {
+  Component, OnInit, ViewContainerRef, OnDestroy, Input, ComponentFactoryResolver, ViewChild, Injector,
+  TemplateRef
+} from '@angular/core';
+import {DomSanitizer} from '@angular/platform-browser';
 import {AlertsService} from '../../services/alerts.service';
 import {AlertSettings} from '../../interfaces/alert-settings';
 import {AlertComponent} from '../alert/alert.component';
@@ -11,7 +15,8 @@ import {AlertComponent} from '../alert/alert.component';
 export class AlertsComponent implements OnInit, OnDestroy {
   constructor(
     private _service: AlertsService,
-    private _resolver: ComponentFactoryResolver
+    private _resolver: ComponentFactoryResolver,
+    private _domSanitize: DomSanitizer
   ) { }
 
   @ViewChild('comp', {read: ViewContainerRef}) compViewContainerRef: ViewContainerRef;
@@ -60,7 +65,12 @@ export class AlertsComponent implements OnInit, OnDestroy {
 
       component.instance.type = alert.type || 'success';
       component.instance.incomingData = {
-        message: alert.message,
+        ...alert.message instanceof TemplateRef ? {
+          message: alert.message,
+          messageIsTemplate: true
+        } : {
+          message: this._domSanitize.bypassSecurityTrustHtml(alert.message)
+        },
         ...settingsFinal
       };
 
