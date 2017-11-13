@@ -6,9 +6,14 @@ import {AlertType} from '../interfaces/alert-type';
 
 @Injectable()
 export class AlertsService {
-    alert$: Subject<AlertEmit> = new Subject();
+  alert$: Subject<AlertEmit> = new Subject();
 
-    create(type: AlertType = 'success', message: any = '', title: any = '', override: AlertSettings = {}) {
-        this.alert$.next({type, title, message, override});
-    }
+  create(
+    type: AlertType = 'success',
+    message: any = '',
+    title: any = '',
+    override: AlertSettings = {}
+  ) {
+    this.alert$.next({type, title, message, override});
+  }
 }

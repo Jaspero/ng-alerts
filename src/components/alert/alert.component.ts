@@ -82,7 +82,7 @@ export class AlertComponent implements OnInit {
 
   closeSelf() {
     this.animationState = 'leave';
-    this.close.emit(Object.assign({close: true}, this.incomingData));
+    this.close.emit({close: true, ...this.incomingData});
   }
 
   overlayClick() {

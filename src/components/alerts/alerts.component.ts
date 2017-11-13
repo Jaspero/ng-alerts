@@ -100,7 +100,7 @@ export class AlertsComponent implements OnInit, OnDestroy {
 
   private _buildItemTemplate(key: string, value: any) {
     if (value instanceof TemplateRef) {
-      return {[key]: value, [`${key}IsTemplate`]: true}
+      return {[key]: value, [`${key}IsTemplate`]: true};
     } else {
       return {[key]: this._domSanitize.bypassSecurityTrustHtml(value)};
     }
