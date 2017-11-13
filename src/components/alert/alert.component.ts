@@ -57,6 +57,8 @@ export class AlertComponent implements OnInit {
 
   animationState = 'enter';
   incomingData: any = {
+    title: '',
+    titleIsTemplate: false,
     message: '',
     messageIsTemplate: false,
     overlay: true,

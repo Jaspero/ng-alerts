@@ -34,15 +34,26 @@
 
 
     <div class="message" [@messageAn]="animationState">
-        <div *ngIf="incomingData.messageIsTemplate else regularTitle">
+        <div *ngIf="incomingData.messageIsTemplate else regularMessage">
             <ng-container *ngTemplateOutlet="incomingData.message"></ng-container>
         </div>
-        <ng-template #regularTitle>
+        <ng-template #regularMessage>
             <div [innerHTML]="incomingData.message"></div>
         </ng-template>
     </div>
 
     <div class="short">
-        <p [@shortAn]="animationState">{{type}}!</p>
+        <p [@shortAn]="animationState" *ngIf="!incomingData.title else customTitle">
+            {{type}}!
+        </p>
+
+        <ng-template #customTitle>
+            <div [@shortAn]="animationState" *ngIf="incomingData.titleIsTemplate else regularTitle">
+                <ng-container *ngTemplateOutlet="incomingData.title"></ng-container>
+            </div>
+            <ng-template #regularTitle>
+                <div [innerHTML]="incomingData.title"></div>
+            </ng-template>
+        </ng-template>
     </div>
 </div>

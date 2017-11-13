@@ -65,12 +65,8 @@ export class AlertsComponent implements OnInit, OnDestroy {
 
       component.instance.type = alert.type || 'success';
       component.instance.incomingData = {
-        ...alert.message instanceof TemplateRef ? {
-          message: alert.message,
-          messageIsTemplate: true
-        } : {
-          message: this._domSanitize.bypassSecurityTrustHtml(alert.message)
-        },
+        ...this._buildItemTemplate('message', alert.message),
+        ...this._buildItemTemplate('title', alert.title),
         ...settingsFinal
       };
 
@@ -100,5 +96,13 @@ export class AlertsComponent implements OnInit, OnDestroy {
     }
 
     this._latestSub.unsubscribe();
+  }
+
+  private _buildItemTemplate(key: string, value: any) {
+    if (value instanceof TemplateRef) {
+      return {[key]: value, [`${key}IsTemplate`]: true}
+    } else {
+      return {[key]: this._domSanitize.bypassSecurityTrustHtml(value)};
+    }
   }
 }
