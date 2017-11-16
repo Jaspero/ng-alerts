@@ -1,6 +1,6 @@
 {
   "name": "@jaspero/ng-alerts",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An easy to use alert library for Angular",
   "scripts": {
     "build": "gulp build",
