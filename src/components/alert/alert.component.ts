@@ -1,4 +1,4 @@
-import {Component, HostBinding, Output, EventEmitter, OnInit, NgZone} from '@angular/core';
+import {Component, HostBinding, Output, EventEmitter, OnInit, NgZone, ViewEncapsulation} from '@angular/core';
 import {animate, keyframes, state, style, transition, trigger} from '@angular/animations';
 import {AlertType} from '../../interfaces/alert-type';
 
@@ -6,6 +6,7 @@ import {AlertType} from '../../interfaces/alert-type';
   selector: 'jaspero-alert',
   templateUrl: './alert.component.html',
   styleUrls: ['./alert.component.scss'],
+  encapsulation: ViewEncapsulation.None,
   animations: [
     trigger('overlayAn', [
       state('void', style({opacity: 0})),
