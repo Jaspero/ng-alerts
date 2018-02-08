@@ -40,11 +40,11 @@ You need to import the `AlertsService` in your component:
 constructor(private _alert: AlertsService) {}
 ```
 
-Then use the `create(type: 'success' | 'error' | 'wearning', 'info', message: (string | HTML | TemplateRef) = '', title: (string | HTML | TemplateRef) = '', settings: AlertSettings = {})` method to initiate an alert.
+Then use the `create(type: 'success' | 'error' | 'warning', 'info', title: (string | HTML | TemplateRef) = '', message: (string | HTML | TemplateRef) = '', settings: AlertSettings = {})` method to initiate an alert.
 
 ```typescript
 open(type: AlertType) {
-    this._alert.create(type, 'This is a message');
+    this._alert.create(type, 'This is a title', 'This is a message');
 }
 ```
 
