@@ -32,7 +32,7 @@ export class AppModule {}
 Then create the component in a root component (you can create it anywhere but you can only use it in that component on any lower ones).
 
 ```html
-<jaspero-alerts [defaultSettings]="options"></jaspero-alerts>
+<jaspero-alerts></jaspero-alerts>
 ```
 
 ## How To Use 
@@ -44,17 +44,18 @@ import {AlertsService} from '@jaspero/ng-alerts';
 constructor(private _alert: AlertsService) {}
 ```
 
-Then use the `create(type: 'success' | 'error' | 'warning', 'info', title: (string | HTML | TemplateRef) = '', message: (string | HTML | TemplateRef) = '', settings: AlertSettings = {})` method to initiate an alert.
+Then use the `create(type: AlertType, title: (string | HTML | TemplateRef) = '', message: (string | HTML | TemplateRef) = '', settings: AlertSettings = {})` method to initiate an alert.
 
 ```typescript
+import {AlertType} from '@jaspero/ng-alerts';
+...
+// AlertType = 'success' | 'error' | 'warning' | 'info'
 open(type: AlertType) {
     this._alert.create(type, 'This is a title', 'This is a message');
 }
 ```
 
-## Options
-
-Available settings: 
+## Alert Settings
 
 ```typescript
 export interface AlertSettings {
@@ -65,9 +66,10 @@ export interface AlertSettings {
 }
 ```
 
-You can provide the settings as input to the `<jaspero-alerts></jaspero-alerts>` component.
-Making the settings default for each created alert. However you can also override the settings by
-passing them in the `create()` method.
+You can provide the settings as input to the component.  
+`<jaspero-alerts [defaultSettings]="options"></jaspero-alerts>`  
+This will be the default settings for each created alert. However you can also override the settings by
+passing them in the `create(type, title, message, settings: AlertSettings)` method.
 
 ## Development
 
