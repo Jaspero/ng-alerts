@@ -17,6 +17,8 @@ $ npm install --save @jaspero/ng-alerts
 Import `JasperoAlertsModule` in your `AppModule`: 
 
 ```ts
+import {JasperoAlertsModule} from '@jaspero/ng2-alerts';
+
 @NgModule({
     imports: [
         JasperoAlertsModule.forRoot()
@@ -37,6 +39,8 @@ Then create the component in a root component (you can create it anywhere but yo
 You need to import the `AlertsService` in your component:
  
 ```typescript
+import {AlertsService} from '@jaspero/ng-alerts';
+...
 constructor(private _alert: AlertsService) {}
 ```
 
