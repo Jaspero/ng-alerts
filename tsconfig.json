@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "target": "es5",
     "baseUrl": "./src",
     "experimentalDecorators": true,
     "moduleResolution": "node",
